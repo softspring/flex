@@ -1,0 +1,14 @@
+{
+    "manifests": {
+        "softspring/cms-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Softspring\\CmsBundle\\SfsCmsBundle": [
+                        "all"
+                    ]
+                }
+            },
+            "ref": "2f5096108a7209919dea895c2d125270beb9c08b"
+        }
+    }
+}

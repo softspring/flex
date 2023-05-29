@@ -1,0 +1,14 @@
+{
+    "recipes": {
+        "softspring/cms-bundle": [
+            "1.0"
+        ]
+    },
+    "branch": "master",
+    "is_contrib": true,
+    "_links": {
+        "repository": "github.com/softspring/recipes",
+        "origin_template": "{package}:{version}@github.com/softspring/recipes:master",
+        "recipe_template": "https://api.github.com/repos/softspring/recipes/contents/{package_dotted}.{version}.json"
+    }
+}
