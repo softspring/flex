@@ -20,6 +20,47 @@
                         "        throw_not_found: false"
                     ],
                     "executable": false
+                },
+                "config/packages/routes.yaml": {
+                    "contents": [
+                        "_sfs_cms:",
+                        "    resource: \"admin/sfs_cms.yaml\"",
+                        "    prefix: /admin/cms'"
+                    ],
+                    "executable": false
+                },
+                "config/packages/admin/sfs_cms.yaml": {
+                    "contents": [
+                        "_sfs_cms_pages_:",
+                        "    resource: \"@SfsCmsBundle/config/routing/admin_pages.yaml\",",
+                        "    prefix: \",/pages\"",
+                        "",
+                        "# CONFIGURE YOUR CUSTOM CONTENT TYPES ADMIN ROUTES",
+                        "# _sfs_cms_custom_:",
+                        "#     resource: \"@SfsCmsBundle/config/routing/admin_content_type.yaml\",",
+                        "#     prefix: \"/custom\",",
+                        "#     defaults:",
+                        "#     _content_type: custom",
+                        "#     name_prefix: sfs_cms_admin_content_custom_",
+                        "",
+                        "_sfs_cms_routes_:",
+                        "    resource: \"@SfsCmsBundle/config/routing/admin_routes.yaml\"",
+                        "    prefix: \"/routes\"",
+                        "",
+                        "_sfs_cms_menus_:",
+                        "    resource: \"@SfsCmsBundle/config/routing/admin_menus.yaml\"",
+                        "    prefix: \"/menus\"",
+                        "",
+                        "_sfs_cms_blocks_:",
+                        "    resource: \"@SfsCmsBundle/config/routing/admin_blocks.yaml\"",
+                        "    prefix: \"/blocks\"",
+                        "",
+                        "_sfs_media_admin_types_:",
+                        "    resource: \"@SfsMediaBundle/config/routing/admin_media.yaml\"",
+                        "    prefix: \"/media\"",
+                        ""
+                    ],
+                    "executable": false
                 }
             },
             "ref": "7dfe56a5c91d9aa16f01d77630414b3e1d33b833"
