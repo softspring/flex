@@ -11,20 +11,20 @@
                     "config/": "%CONFIG_DIR%/"
                 },
                 "env": {
-                    "#1": "MEDIA_BUCKET_NAME=<REPLACE-YOUR-MEDIA-BUCKET-NAME>"
+                    "#0": "MEDIA_BUCKET_NAME=<REPLACE-YOUR-MEDIA-BUCKET-NAME>"
                 }
             },
             "files": {
                 "config/packages/sfs_media.yaml": {
                     "contents": [
                         "sfs_media:",
-                        "   google_cloud_storage:",
-                        "       bucket: '%env(MEDIA_BUCKET_NAME)%'"
+                        "    google_cloud_storage:",
+                        "        bucket: '%env(MEDIA_BUCKET_NAME)%'"
                     ],
                     "executable": false
                 }
             },
-            "ref": "ab68b2142f9169313fcf1f45022f91956d471947"
+            "ref": "ed56df2c4287ce8b1357b14bd5615893d3250132"
         }
     }
 }

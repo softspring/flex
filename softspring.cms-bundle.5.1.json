@@ -6,9 +6,23 @@
                     "Softspring\\CmsBundle\\SfsCmsBundle": [
                         "all"
                     ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
                 }
             },
-            "ref": "2f5096108a7209919dea895c2d125270beb9c08b"
+            "files": {
+                "config/packages/sfs_cms.yaml": {
+                    "contents": [
+                        "sfs_cms:",
+                        "    site:",
+                        "        identification: 'domain'",
+                        "        throw_not_found: false"
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "7dfe56a5c91d9aa16f01d77630414b3e1d33b833"
         }
     }
 }
