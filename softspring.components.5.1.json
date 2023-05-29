@@ -8,7 +8,7 @@
                     ]
                 },
                 "copy-from-recipe": {
-                    "templates/": "%TEMPLATES_DIR%/"
+                    "templates/": "templates/"
                 }
             },
             "files": {
@@ -19,7 +19,7 @@
                     "executable": false
                 }
             },
-            "ref": "2d6244ebcf131db69f780162abcb17d8a8209b2b"
+            "ref": "52dc70d0977cd702ac67606b76fc0b1554043783"
         }
     }
 }
