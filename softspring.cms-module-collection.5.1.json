@@ -1,0 +1,42 @@
+{
+    "manifests": {
+        "softspring/cms-module-collection": {
+            "manifest": {
+                "copy-from-recipe": {
+                    "assets/": "assets/",
+                    "config/": "%CONFIG_DIR%/"
+                }
+            },
+            "files": {
+                "config/packages/sfs_cms.yaml": {
+                    "contents": [
+                        "sfs_cms:",
+                        "    collections:",
+                        "        - vendor/softspring/cms-module-collection",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "assets/styles/admin.scss": {
+                    "contents": [
+                        "@import \"./../../vendor/softspring/cms-module-collection/assets/modules/hero\";",
+                        "@import \"./../../vendor/softspring/cms-module-collection/assets/modules/text-section\";",
+                        "@import \"./../../vendor/softspring/cms-module-collection/assets/modules/card\";",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "assets/admin.js": {
+                    "contents": [
+                        "import './../vendor/softspring/cms-module-collection/assets/modules/title';",
+                        "import './../vendor/softspring/cms-module-collection/assets/modules/wysiwyg';",
+                        "import './../vendor/softspring/cms-module-collection/assets/modules/carousel';",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "3603f134798e5528b27bed4e0f3f53284c12f5c1"
+        }
+    }
+}
