@@ -1,7 +1,7 @@
 {
     "recipes": {
         "softspring/cms-bundle": [
-            "1.0"
+            "5.1"
         ]
     },
     "branch": "master",
