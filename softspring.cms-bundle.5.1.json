@@ -16,7 +16,7 @@
                     "contents": [
                         "sfs_cms:",
                         "    site:",
-                        "        identification: 'domain'",
+                        "        identification: \"domain\"",
                         "        throw_not_found: false"
                     ],
                     "executable": false
@@ -25,7 +25,7 @@
                     "contents": [
                         "_sfs_cms:",
                         "    resource: \"routes/admin/sfs_cms.yaml\"",
-                        "    prefix: /admin/cms'"
+                        "    prefix: \"/admin/cms\""
                     ],
                     "executable": false
                 },
@@ -63,7 +63,7 @@
                     "executable": false
                 }
             },
-            "ref": "edb404df09de951db1db8bf8d8351d406b7c6e9e"
+            "ref": "bc47a242fd5fc6fc0fc126a0c33cde931e5ebad4"
         }
     }
 }
