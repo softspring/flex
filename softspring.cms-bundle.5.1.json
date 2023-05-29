@@ -21,7 +21,7 @@
                     ],
                     "executable": false
                 },
-                "config/packages/routes.yaml": {
+                "config/routes.yaml": {
                     "contents": [
                         "_sfs_cms:",
                         "    resource: \"admin/sfs_cms.yaml\"",
@@ -29,7 +29,7 @@
                     ],
                     "executable": false
                 },
-                "config/packages/admin/sfs_cms.yaml": {
+                "config/routes/admin/sfs_cms.yaml": {
                     "contents": [
                         "_sfs_cms_pages_:",
                         "    resource: \"@SfsCmsBundle/config/routing/admin_pages.yaml\",",
