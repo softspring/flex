@@ -1,0 +1,14 @@
+{
+    "manifests": {
+        "softspring/media-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Softspring\\MediaBundle\\SfsMediaBundle": [
+                        "all"
+                    ]
+                }
+            },
+            "ref": "5cd2df3f7e35e9acc1af64df4a4fb19e06a9bf0f"
+        }
+    }
+}
