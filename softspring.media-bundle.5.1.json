@@ -19,12 +19,14 @@
                     "contents": [
                         "sfs_media:",
                         "    google_cloud_storage:",
-                        "        bucket: '%env(MEDIA_BUCKET_NAME)%'"
+                        "        bucket: '%env(MEDIA_BUCKET_NAME)%'",
+                        "    media:",
+                        "        admin_controller: true"
                     ],
                     "executable": false
                 }
             },
-            "ref": "ed56df2c4287ce8b1357b14bd5615893d3250132"
+            "ref": "d6afab526d357dae6e5a870b58e42c4a5e05cd99"
         }
     }
 }
