@@ -8,7 +8,8 @@
                     ]
                 },
                 "copy-from-recipe": {
-                    "config/": "%CONFIG_DIR%/"
+                    "config/": "%CONFIG_DIR%/",
+                    "translations/": "translations/"
                 }
             },
             "files": {
@@ -61,9 +62,63 @@
                         ""
                     ],
                     "executable": false
-                }
+                },
+                "config/packages/sfs_admin_menu.yaml": [
+                    "twig:",
+                    "    globals:",
+                    "        admin_menu:",
+                    "            _cacheable: false",
+                    "            _view: '@SfsComponents/sidebar/sidebar-pills.html.twig'",
+                    "            _translation_domain: 'sfs_components'",
+                    "            _active_for_routes_class: 'active font-weight-bold'",
+                    "            _show_not_granted: true",
+                    "            cms:",
+                    "                translation_key: 'sidebar.menu.cms.title'",
+                    "                pages:",
+                    "                    translation_key: 'sidebar.menu.cms.pages'",
+                    "                    route: 'sfs_cms_admin_content_page_list'",
+                    "                    # role: ROLE_SFS_CMS_ADMIN_PAGES_LIST",
+                    "                    active_expression: 'sfs_cms_admin_content_page_'",
+                    "                    icon: 'bi bi-code-slash'",
+                    "                menus:",
+                    "                    translation_key: 'sidebar.menu.cms.menus'",
+                    "                    route: 'sfs_cms_admin_menus_list'",
+                    "                    # role: ROLE_SFS_CMS_ADMIN_MENUS_LIST",
+                    "                    active_expression: 'sfs_cms_admin_menus_'",
+                    "                    icon: 'bi bi-list-nested'",
+                    "                blocks:",
+                    "                    translation_key: 'sidebar.menu.cms.blocks'",
+                    "                    route: 'sfs_cms_admin_blocks_list'",
+                    "                    # role: ROLE_SFS_CMS_ADMIN_BLOCKS_LIST",
+                    "                    active_expression: 'sfs_cms_admin_blocks_'",
+                    "                    icon: 'bi bi-puzzle'",
+                    "                medias:",
+                    "                    translation_key: 'sidebar.menu.cms.medias'",
+                    "                    route: 'sfs_media_admin_medias_list'",
+                    "                    # role: ROLE_SFS_MEDIA_ADMIN_MEDIAS_LIST",
+                    "                    active_expression: 'sfs_media_admin_medias_'",
+                    "                    icon: 'bi bi-images'",
+                    "                routes:",
+                    "                    translation_key: 'sidebar.menu.cms.routes'",
+                    "                    route: 'sfs_cms_admin_routes_list'",
+                    "                    # role: ROLE_SFS_CMS_ADMIN_ROUTES_LIST",
+                    "                    active_expression: 'sfs_cms_admin_routes_'",
+                    "                    icon: 'bi bi-signpost-split'",
+                    ""
+                ],
+                "translations/sfs_components.en.yaml": [
+                    "sidebar:",
+                    "    menu:",
+                    "        cms:",
+                    "            title: \"CMS\"",
+                    "            pages: \"Pages\"",
+                    "            menus: \"Menus\"",
+                    "            blocks: \"Blocks\"",
+                    "            medias: \"Medias\"",
+                    "            routes: \"Routes\""
+                ]
             },
-            "ref": "bc47a242fd5fc6fc0fc126a0c33cde931e5ebad4"
+            "ref": "9522a4b08abc082f038b3300e929ff91888c6d67"
         }
     }
 }
