@@ -20,10 +20,11 @@
                         "sfs_media:",
                         "   google_cloud_storage:",
                         "       bucket: '%env(MEDIA_BUCKET_NAME)%'"
-                    ]
+                    ],
+                    "executable": false
                 }
             },
-            "ref": "52cd43a64fd9b0128398923d63c71c139919e2b2"
+            "ref": "ab68b2142f9169313fcf1f45022f91956d471947"
         }
     }
 }
