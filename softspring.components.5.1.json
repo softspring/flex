@@ -8,10 +8,20 @@
                     ]
                 },
                 "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/",
                     "templates/": "templates/"
                 }
             },
             "files": {
+                "config/packages/sfs_components.yaml": {
+                    "contents": [
+                        "twig:",
+                        "    globals:",
+                        "        sfs_components_theme: 'bootstrap5'",
+                        ""
+                    ],
+                    "executable": false
+                },
                 "templates/base.html.twig": {
                     "contents": [
                         "{% extends '@SfsComponents/base.html.twig' %}"
@@ -19,7 +29,7 @@
                     "executable": false
                 }
             },
-            "ref": "52dc70d0977cd702ac67606b76fc0b1554043783"
+            "ref": "6750dd64e9cd76851b653f51fceb554c67aab2fc"
         }
     }
 }
