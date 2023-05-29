@@ -7,7 +7,7 @@
                 }
             },
             "files": {
-                "config/packages/doctrine_migrations.yaml": {
+                "config/packages/sfs_doctrine_migrations.yaml": {
                     "contents": [
                         "doctrine_migrations:",
                         "    services:",
@@ -16,7 +16,7 @@
                     "executable": false
                 }
             },
-            "ref": "063982e78da7a465f0284c4743745a5f9707bcf1"
+            "ref": "8873b9ab3ab778d482beace30ced6e34019226c8"
         }
     }
 }
