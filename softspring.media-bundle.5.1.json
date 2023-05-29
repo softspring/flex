@@ -11,7 +11,7 @@
                     "config/": "%CONFIG_DIR%/"
                 },
                 "env": {
-                    "#0": "MEDIA_BUCKET_NAME=<REPLACE-YOUR-MEDIA-BUCKET-NAME>"
+                    "#1": "MEDIA_BUCKET_NAME=<REPLACE-YOUR-MEDIA-BUCKET-NAME>"
                 }
             },
             "files": {

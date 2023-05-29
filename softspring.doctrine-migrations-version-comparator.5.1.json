@@ -1,0 +1,22 @@
+{
+    "manifests": {
+        "softspring/doctrine-migrations-version-comparator": {
+            "manifest": {
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                }
+            },
+            "files": {
+                "config/packages/doctrine_migrations.yaml": {
+                    "contents": [
+                        "doctrine_migrations:",
+                        "    services:",
+                        "        'Doctrine\\Migrations\\Version\\Comparator': 'App\\Doctrine\\Migrations\\VersionNumberComparator'"
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "063982e78da7a465f0284c4743745a5f9707bcf1"
+        }
+    }
+}
