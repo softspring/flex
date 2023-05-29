@@ -24,7 +24,7 @@
                 "config/routes.yaml": {
                     "contents": [
                         "_sfs_cms:",
-                        "    resource: \"admin/sfs_cms.yaml\"",
+                        "    resource: \"routes/admin/sfs_cms.yaml\"",
                         "    prefix: /admin/cms'"
                     ],
                     "executable": false
@@ -32,8 +32,8 @@
                 "config/routes/admin/sfs_cms.yaml": {
                     "contents": [
                         "_sfs_cms_pages_:",
-                        "    resource: \"@SfsCmsBundle/config/routing/admin_pages.yaml\",",
-                        "    prefix: \",/pages\"",
+                        "    resource: \"@SfsCmsBundle/config/routing/admin_pages.yaml\"",
+                        "    prefix: \"/pages\"",
                         "",
                         "# CONFIGURE YOUR CUSTOM CONTENT TYPES ADMIN ROUTES",
                         "# _sfs_cms_custom_:",
@@ -63,7 +63,7 @@
                     "executable": false
                 }
             },
-            "ref": "a7aa744c0dd311abedda8687277b73f4cf50b3f6"
+            "ref": "edb404df09de951db1db8bf8d8351d406b7c6e9e"
         }
     }
 }
