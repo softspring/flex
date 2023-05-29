@@ -2,41 +2,31 @@
     "manifests": {
         "softspring/cms-module-collection": {
             "manifest": {
-                "copy-from-recipe": {
-                    "assets/": "assets/",
-                    "config/": "%CONFIG_DIR%/"
-                }
+                "add-lines": [
+                    {
+                        "file": "config/packages/sfs_cms.yaml",
+                        "content": [
+                            "    collections:",
+                            "        - vendor/softspring/cms-module-collection"
+                        ],
+                        "position": "after_target",
+                        "target": "sfs_cms:",
+                        "warn_if_missing": true
+                    },
+                    {
+                        "file": "assets/styles/admin.scss",
+                        "content": [
+                            "@import \"./../../vendor/softspring/cms-module-collection/assets/modules/hero\";",
+                            "@import \"./../../vendor/softspring/cms-module-collection/assets/modules/text-section\";",
+                            "@import \"./../../vendor/softspring/cms-module-collection/assets/modules/card\";",
+                            ""
+                        ],
+                        "position": "bottom",
+                        "warn_if_missing": true
+                    }
+                ]
             },
-            "files": {
-                "config/packages/sfs_cms.yaml": {
-                    "contents": [
-                        "sfs_cms:",
-                        "    collections:",
-                        "        - vendor/softspring/cms-module-collection",
-                        ""
-                    ],
-                    "executable": false
-                },
-                "assets/styles/admin.scss": {
-                    "contents": [
-                        "@import \"./../../vendor/softspring/cms-module-collection/assets/modules/hero\";",
-                        "@import \"./../../vendor/softspring/cms-module-collection/assets/modules/text-section\";",
-                        "@import \"./../../vendor/softspring/cms-module-collection/assets/modules/card\";",
-                        ""
-                    ],
-                    "executable": false
-                },
-                "assets/admin.js": {
-                    "contents": [
-                        "import './../vendor/softspring/cms-module-collection/assets/modules/title';",
-                        "import './../vendor/softspring/cms-module-collection/assets/modules/wysiwyg';",
-                        "import './../vendor/softspring/cms-module-collection/assets/modules/carousel';",
-                        ""
-                    ],
-                    "executable": false
-                }
-            },
-            "ref": "d0f6d4323622acd15a121cc29e936b6aeaf51664"
+            "ref": "0dd1f401cfcb1b7e7c466b3aa2fd60d0d88235d0"
         }
     }
 }
