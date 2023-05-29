@@ -15,15 +15,31 @@
                 "post-install-output": [
                     "  * Your admin is almost ready:",
                     "    1. Install webpack by running <comment>composer require webpack</comment>",
-                    "    2. Edit <comment>webpack.config.js</comment> and <info>uncomment</info> the following lines:",
+                    "    2. Install Javascript dependencies",
+                    "        yarn install",
+                    "        yarn add @popperjs/core bootstrap underscore.string bootstrap-icons --dev",
+                    "        yarn build",
+                    "    3. Edit <comment>webpack.config.js</comment> and <info>uncomment</info> the following lines:",
                     "",
                     "        Encore",
                     "            // ...",
                     "            .addEntry('admin', './assets/js/admin.js')",
+                    "            // ...",
+                    "            .enableSassLoader()",
+                    "            // ...",
                     ""
                 ]
             },
             "files": {
+                "assets/styles/admin.scss": {
+                    "contents": [
+                        "@import \"~bootstrap/scss/bootstrap\";",
+                        "@import \"~bootstrap-icons\";",
+                        "@import \"./../../vendor/softspring/cms-bundle/assets/styles/admin-cms\";",
+                        "@import \"./../../vendor/softspring/media-bundle/assets/styles/media-type\";"
+                    ],
+                    "executable": false
+                },
                 "assets/admin.js": {
                     "contents": [
                         "/*",
@@ -34,7 +50,7 @@
                         " */",
                         "",
                         "// any CSS you import will output into a single css file (app.css in this case)",
-                        "// import './styles/admin.scss';",
+                        "import './styles/admin.scss';",
                         "",
                         "// import bootstrap 5 js",
                         "import 'bootstrap';",
@@ -156,7 +172,7 @@
                     "executable": false
                 }
             },
-            "ref": "e5da73d67e77e3b850f2b8fd0fc8d3994c868a25"
+            "ref": "a78214dfeab5545c367105be9b529464653ba56d"
         }
     }
 }
