@@ -5,20 +5,26 @@
                 "add-lines": [
                     {
                         "file": "config/packages/sfs_cms.yaml",
-                        "content": "    collections:\n        - vendor/softspring/cms-module-collection",
+                        "content": "    collections:\n        - vendor/softspring/cms-module-collection\n",
                         "position": "after_target",
                         "target": "sfs_cms:",
                         "warn_if_missing": true
                     },
                     {
                         "file": "assets/styles/admin.scss",
-                        "content": "@import \"./../../vendor/softspring/cms-module-collection/assets/modules/hero\";\n@import \"./../../vendor/softspring/cms-module-collection/assets/modules/text-section\";\n@import \"./../../vendor/softspring/cms-module-collection/assets/modules/card\";\n",
+                        "content": "@import \"./../../vendor/softspring/cms-module-collection/assets/modules\";\n\n",
+                        "position": "bottom",
+                        "warn_if_missing": true
+                    },
+                    {
+                        "file": "assets/styles/admin.js",
+                        "content": "import './../vendor/softspring/cms-module-collection/assets/modules';\n\n",
                         "position": "bottom",
                         "warn_if_missing": true
                     }
                 ]
             },
-            "ref": "e11a561f65904fdc1e34ad8653bce8aca34292e1"
+            "ref": "bf54b793c17a4d934b2b48acc91f37aa1afee2c6"
         }
     }
 }
