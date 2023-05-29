@@ -17,14 +17,14 @@
                         "warn_if_missing": true
                     },
                     {
-                        "file": "assets/styles/admin.js",
+                        "file": "assets/admin.js",
                         "content": "import './../vendor/softspring/cms-module-collection/assets/modules';\n\n",
                         "position": "bottom",
                         "warn_if_missing": true
                     }
                 ]
             },
-            "ref": "bf54b793c17a4d934b2b48acc91f37aa1afee2c6"
+            "ref": "ea5a7eb75733cfc60dd38b226f2a57a8298b512b"
         }
     }
 }
