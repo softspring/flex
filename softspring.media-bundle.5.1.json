@@ -6,9 +6,24 @@
                     "Softspring\\MediaBundle\\SfsMediaBundle": [
                         "all"
                     ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                },
+                "env": {
+                    "#1": "MEDIA_BUCKET_NAME=<REPLACE-YOUR-MEDIA-BUCKET-NAME>"
                 }
             },
-            "ref": "5cd2df3f7e35e9acc1af64df4a4fb19e06a9bf0f"
+            "files": {
+                "config/packages/sfs_media.yaml": {
+                    "contents": [
+                        "sfs_media:",
+                        "   google_cloud_storage:",
+                        "       bucket: '%env(MEDIA_BUCKET_NAME)%'"
+                    ]
+                }
+            },
+            "ref": "c39e28bfeae51f799c7eb65254759f7820ec1592"
         }
     }
 }
