@@ -1,0 +1,14 @@
+{
+    "manifests": {
+        "softspring/components": {
+            "manifest": {
+                "bundles": {
+                    "Softspring\\Component\\Components\\SfsComponentsBundle": [
+                        "all"
+                    ]
+                }
+            },
+            "ref": "0299394fb6f38ec8855c91c7b620ba470420e731"
+        }
+    }
+}
