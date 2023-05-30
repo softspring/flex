@@ -28,6 +28,14 @@
                     "            .enableSassLoader()",
                     "            // ...",
                     ""
+                ],
+                "add-lines": [
+                    {
+                        "file": "config/routes.yaml",
+                        "content": "_sfs_cms:\n                resource: \"routes/admin/sfs_cms.yaml\"\n                prefix: \"/admin/cms\\\n\n",
+                        "position": "bottom",
+                        "warn_if_missing": true
+                    }
                 ]
             },
             "files": {
@@ -67,14 +75,6 @@
                         "    site:",
                         "        identification: \"domain\"",
                         "        throw_not_found: false"
-                    ],
-                    "executable": false
-                },
-                "config/routes.yaml": {
-                    "contents": [
-                        "_sfs_cms:",
-                        "    resource: \"routes/admin/sfs_cms.yaml\"",
-                        "    prefix: \"/admin/cms\""
                     ],
                     "executable": false
                 },
@@ -172,7 +172,7 @@
                     "executable": false
                 }
             },
-            "ref": "a78214dfeab5545c367105be9b529464653ba56d"
+            "ref": "8e98dea790d5f91765507c6108b46da86e0d9d96"
         }
     }
 }
