@@ -9,6 +9,9 @@
             "files": {
                 "config/packages/sfs_doctrine_migrations.yaml": {
                     "contents": [
+                        "services:",
+                        "    Softspring\\Component\\DoctrineMigrationsVersionComparator\\VersionNumberComparator: ~,",
+                        "",
                         "doctrine_migrations:",
                         "    services:",
                         "        'Doctrine\\Migrations\\Version\\Comparator': 'Softspring\\Component\\DoctrineMigrationsVersionComparator\\VersionNumberComparator'"
@@ -16,7 +19,7 @@
                     "executable": false
                 }
             },
-            "ref": "1ede0bc4e2719fd354aba0bff4902295005ab563"
+            "ref": "77a70f595f40cb428a1b34d4a5bbd2d355770992"
         }
     }
 }
