@@ -32,7 +32,7 @@
                 "add-lines": [
                     {
                         "file": "config/routes.yaml",
-                        "content": "_sfs_cms:\n                resource: \"routes/admin/sfs_cms.yaml\"\n                prefix: \"/admin/cms\\\n\n",
+                        "content": "_sfs_cms:\n        resource: \"routes/admin/sfs_cms.yaml\"\n        prefix: \"/admin/cms\"\n\n",
                         "position": "bottom",
                         "warn_if_missing": true
                     }
@@ -172,7 +172,7 @@
                     "executable": false
                 }
             },
-            "ref": "8e98dea790d5f91765507c6108b46da86e0d9d96"
+            "ref": "91d54e6931fb2de62e9c6234020555b1e9b0c0cb"
         }
     }
 }
