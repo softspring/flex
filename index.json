@@ -15,6 +15,9 @@
         "softspring/media-bundle": [
             "5.1"
         ],
+        "softspring/permissions-bundle": [
+            "5.1"
+        ],
         "softspring/twig-extra-bundle": [
             "5.1"
         ],
