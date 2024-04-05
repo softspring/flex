@@ -1,0 +1,31 @@
+{
+    "manifests": {
+        "softspring/media-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Softspring\\MediaBundle\\SfsMediaBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                }
+            },
+            "files": {
+                "config/packages/sfs_media.yaml": {
+                    "contents": [
+                        "sfs_media:",
+                        "    driver: filesystem",
+                        "    filesystem:",
+                        "        path: '%kernel.project_dir%/public/media'",
+                        "        url: '/media",
+                        "    media:",
+                        "        admin_controller: true"
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "d6afab526d357dae6e5a870b58e42c4a5e05cd99"
+        }
+    }
+}
