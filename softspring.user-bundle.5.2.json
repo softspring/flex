@@ -82,7 +82,7 @@
                         "         $this->id = uniqid();",
                         "     }",
                         "",
-                        "    public function getDisplayName(): ?string",
+                        "    public function getDisplayName(): string",
                         "    {",
                         "        return $this->getName().' '.$this->getSurname();",
                         "    }",

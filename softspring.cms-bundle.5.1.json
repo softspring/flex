@@ -32,7 +32,7 @@
                 "add-lines": [
                     {
                         "file": "config/routes.yaml",
-                        "content": "_sfs_cms:\n        resource: \"routes/admin/sfs_cms.yaml\"\n        prefix: \"/admin/cms\"\n\n",
+                        "content": "_sfs_cms:\n    resource: \"routes/admin/sfs_cms.yaml\"\n    prefix: \"/admin/cms\"\n\n",
                         "position": "bottom",
                         "warn_if_missing": true
                     }
