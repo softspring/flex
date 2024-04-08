@@ -19,6 +19,54 @@
                 ]
             },
             "files": {
+                "config/packages/security.yaml": {
+                    "imports": [
+                        {
+                            "resource": "@SfsUserBundle/config/security/admin_role_hierarchy.yaml"
+                        }
+                    ],
+                    "security": {
+                        "providers": {
+                           "sfs_user": {
+                               "id": "sfs_user.user_provider"
+                           }
+                        },
+                        "role_hierarchy": {
+                            "ROLE_ADMIN:": [
+                                "ROLE_ADMIN_USERS_RW",
+                                "ROLE_ADMIN_INVITATION_RO",
+                                "ROLE_ADMIN_ADMINISTRATORS_RW"
+                            ],
+                            "ROLE_SUPER_ADMIN:": [
+                                "ROLE_ADMIN",
+                                "ROLE_ADMIN_ADMINISTRATORS_PROMOTE_SUPER",
+                                "ROLE_ADMIN_ADMINISTRATORS_DEMOTE_SUPER"
+                            ]
+                        },
+                        "firewalls": {
+                            "main": {
+                                "pattern": "^/admin",
+                                "provider": "sfs_user",
+                                "form_login": {
+                                    "provider": "sfs_user",
+                                    "login_path": "sfs_user_login",
+                                    "check_path": "sfs_user_login_check"
+                                },
+                                "logout": {
+                                    "path": "sfs_user_logout"
+                                }
+                            }
+                        },
+                        "access_control": [
+                            { "path": ",^/admin/login", "roles": "PUBLIC_ACCESS" },
+                            { "path": ",^/admin/invitation", "roles": "PUBLIC_ACCESS" },
+                            { "path": ",^/admin/reset-password", "roles": "PUBLIC_ACCESS" },
+                            { "path": ",^/admin/navbar-user", "roles": "PUBLIC_ACCESS" },
+                            { "path": ",^/admin", "roles": "ROLE_ADMIN" }
+                        ]
+                    },
+                    "executable": false
+                },
                 "src/Entity/User.php": {
                     "contents": [
                         "<?php",
@@ -50,6 +98,8 @@
                         " * @ORM\\Entity()",
                         " * @ORM\\HasLifecycleCallbacks()",
                         " */",
+                        "#[ORM\Entity]",
+                        "#[ORM\HasLifecycleCallbacks]",
                         "class User extends UserModel implements NameSurnameInterface, UserPasswordInterface, PasswordRequestInterface, UserIdentifierEmailInterface, UserAvatarInterface, ConfirmableInterface, RolesAdminInterface, UserLastLoginInterface, UserHasLocalePreferenceInterface",
                         "{",
                         "    use UserIdentifierEmailTrait;",
@@ -67,6 +117,9 @@
                         "     * @ORM\\Column(length=13, options={\"fixed\": true})",
                         "     * @ORM\\GeneratedValue(strategy=\"NONE\")",
                         "     */",
+                        "     #[ORM\Id]",
+                        "     #[ORM\Column(length: 13, options: ['fixed' => true])]",
+                        "     #[ORM\GeneratedValue(strategy: 'NONE')]",
                         "     protected ?string $id = null;",
                         "",
                         "     public function getId(): ?string",
@@ -77,6 +130,7 @@
                         "     /**",
                         "     * @ORM\\PrePersist()",
                         "     */",
+                        "     #[ORM\\PrePersist]",
                         "     public function _generateId(): void",
                         "     {",
                         "         $this->id = uniqid();",
