@@ -18,7 +18,7 @@
                         "    driver: filesystem",
                         "    filesystem:",
                         "        path: '%kernel.project_dir%/public/media'",
-                        "        url: '/media",
+                        "        url: '/media'",
                         "    media:",
                         "        admin_controller: true"
                     ],
