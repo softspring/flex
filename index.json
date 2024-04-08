@@ -1,29 +1,39 @@
 {
     "recipes": {
         "softspring/cms-bundle": [
-            "5.1"
+            "5.1",
+            "5.2"
         ],
         "softspring/cms-module-collection": [
-            "5.1"
+            "5.1",
+            "5.2"
         ],
         "softspring/components": [
-            "5.1"
+            "5.1",
+            "5.2"
         ],
         "softspring/doctrine-migrations-version-comparator": [
-            "5.1"
+            "5.1",
+            "5.2"
         ],
         "softspring/media-bundle": [
             "5.1",
             "5.2"
         ],
         "softspring/permissions-bundle": [
-            "5.1"
+            "5.1",
+            "5.2"
+        ],
+        "softspring/sfs-builder": [
+            "5.2"
         ],
         "softspring/twig-extra-bundle": [
-            "5.1"
+            "5.1",
+            "5.2"
         ],
         "softspring/user-bundle": [
-            "5.1"
+            "5.1",
+            "5.2"
         ]
     },
     "branch": "master",

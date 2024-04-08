@@ -1,0 +1,178 @@
+{
+    "manifests": {
+        "softspring/cms-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Softspring\\CmsBundle\\SfsCmsBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "assets/": "assets/",
+                    "config/": "%CONFIG_DIR%/",
+                    "translations/": "translations/"
+                },
+                "post-install-output": [
+                    "  * Your admin is almost ready:",
+                    "    1. Install webpack by running <comment>composer require webpack</comment>",
+                    "    2. Install Javascript dependencies",
+                    "        yarn install",
+                    "        yarn add @popperjs/core bootstrap underscore.string bootstrap-icons --dev",
+                    "        yarn build",
+                    "    3. Edit <comment>webpack.config.js</comment> and <info>uncomment</info> the following lines:",
+                    "",
+                    "        Encore",
+                    "            // ...",
+                    "            .addEntry('admin', './assets/js/admin.js')",
+                    "            // ...",
+                    "            .enableSassLoader()",
+                    "            // ...",
+                    ""
+                ],
+                "add-lines": [
+                    {
+                        "file": "config/routes.yaml",
+                        "content": "_sfs_cms:\n        resource: \"routes/admin/sfs_cms.yaml\"\n        prefix: \"/admin/cms\"\n\n",
+                        "position": "bottom",
+                        "warn_if_missing": true
+                    }
+                ]
+            },
+            "files": {
+                "assets/styles/admin.scss": {
+                    "contents": [
+                        "@import \"~bootstrap/scss/bootstrap\";",
+                        "@import \"~bootstrap-icons\";",
+                        "@import \"./../../vendor/softspring/cms-bundle/assets/styles/admin-cms\";",
+                        "@import \"./../../vendor/softspring/media-bundle/assets/styles/media-type\";"
+                    ],
+                    "executable": false
+                },
+                "assets/admin.js": {
+                    "contents": [
+                        "/*",
+                        " * Welcome to your admin's main JavaScript file!",
+                        " *",
+                        " * We recommend including the built version of this JavaScript file",
+                        " * (and its CSS file) in your base layout (base.html.twig).",
+                        " */",
+                        "",
+                        "// any CSS you import will output into a single css file (app.css in this case)",
+                        "import './styles/admin.scss';",
+                        "",
+                        "// import bootstrap 5 js",
+                        "import 'bootstrap';",
+                        "",
+                        "import './../vendor/softspring/cms-bundle/assets/scripts/admin-cms';",
+                        "import './../vendor/softspring/media-bundle/assets/scripts/media-type';",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "config/packages/sfs_cms.yaml": {
+                    "contents": [
+                        "sfs_cms:",
+                        "    site:",
+                        "        identification: \"domain\"",
+                        "        throw_not_found: false"
+                    ],
+                    "executable": false
+                },
+                "config/routes/admin/sfs_cms.yaml": {
+                    "contents": [
+                        "_sfs_cms_pages_:",
+                        "    resource: \"@SfsCmsBundle/config/routing/admin_pages.yaml\"",
+                        "    prefix: \"/pages\"",
+                        "",
+                        "# CONFIGURE YOUR CUSTOM CONTENT TYPES ADMIN ROUTES",
+                        "# _sfs_cms_custom_:",
+                        "#     resource: \"@SfsCmsBundle/config/routing/admin_content_type.yaml\",",
+                        "#     prefix: \"/custom\",",
+                        "#     defaults:",
+                        "#     _content_type: custom",
+                        "#     name_prefix: sfs_cms_admin_content_custom_",
+                        "",
+                        "_sfs_cms_routes_:",
+                        "    resource: \"@SfsCmsBundle/config/routing/admin_routes.yaml\"",
+                        "    prefix: \"/routes\"",
+                        "",
+                        "_sfs_cms_menus_:",
+                        "    resource: \"@SfsCmsBundle/config/routing/admin_menus.yaml\"",
+                        "    prefix: \"/menus\"",
+                        "",
+                        "_sfs_cms_blocks_:",
+                        "    resource: \"@SfsCmsBundle/config/routing/admin_blocks.yaml\"",
+                        "    prefix: \"/blocks\"",
+                        "",
+                        "_sfs_media_admin_types_:",
+                        "    resource: \"@SfsMediaBundle/config/routing/admin_media.yaml\"",
+                        "    prefix: \"/media\"",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "config/packages/sfs_admin_menu.yaml": {
+                    "contents": [
+                        "twig:",
+                        "    globals:",
+                        "        admin_menu:",
+                        "            _cacheable: false",
+                        "            _view: '@SfsComponents/sidebar/sidebar-pills.html.twig'",
+                        "            _translation_domain: 'sfs_components'",
+                        "            _active_for_routes_class: 'active font-weight-bold'",
+                        "            _show_not_granted: true",
+                        "            cms:",
+                        "                translation_key: 'sidebar.menu.cms.title'",
+                        "                pages:",
+                        "                    translation_key: 'sidebar.menu.cms.pages'",
+                        "                    route: 'sfs_cms_admin_content_page_list'",
+                        "                    # role: ROLE_SFS_CMS_ADMIN_PAGES_LIST",
+                        "                    active_expression: 'sfs_cms_admin_content_page_'",
+                        "                    icon: 'bi bi-code-slash'",
+                        "                menus:",
+                        "                    translation_key: 'sidebar.menu.cms.menus'",
+                        "                    route: 'sfs_cms_admin_menus_list'",
+                        "                    # role: ROLE_SFS_CMS_ADMIN_MENUS_LIST",
+                        "                    active_expression: 'sfs_cms_admin_menus_'",
+                        "                    icon: 'bi bi-list-nested'",
+                        "                blocks:",
+                        "                    translation_key: 'sidebar.menu.cms.blocks'",
+                        "                    route: 'sfs_cms_admin_blocks_list'",
+                        "                    # role: ROLE_SFS_CMS_ADMIN_BLOCKS_LIST",
+                        "                    active_expression: 'sfs_cms_admin_blocks_'",
+                        "                    icon: 'bi bi-puzzle'",
+                        "                medias:",
+                        "                    translation_key: 'sidebar.menu.cms.medias'",
+                        "                    route: 'sfs_media_admin_medias_list'",
+                        "                    # role: ROLE_SFS_MEDIA_ADMIN_MEDIAS_LIST",
+                        "                    active_expression: 'sfs_media_admin_medias_'",
+                        "                    icon: 'bi bi-images'",
+                        "                routes:",
+                        "                    translation_key: 'sidebar.menu.cms.routes'",
+                        "                    route: 'sfs_cms_admin_routes_list'",
+                        "                    # role: ROLE_SFS_CMS_ADMIN_ROUTES_LIST",
+                        "                    active_expression: 'sfs_cms_admin_routes_'",
+                        "                    icon: 'bi bi-signpost-split'",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "translations/sfs_components.en.yaml": {
+                    "contents": [
+                        "sidebar:",
+                        "    menu:",
+                        "        cms:",
+                        "            title: \"CMS\"",
+                        "            pages: \"Pages\"",
+                        "            menus: \"Menus\"",
+                        "            blocks: \"Blocks\"",
+                        "            medias: \"Medias\"",
+                        "            routes: \"Routes\""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "94bfd163919fb5134e0dbc7b99495054b331b524"
+        }
+    }
+}
