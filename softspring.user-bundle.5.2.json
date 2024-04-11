@@ -14,10 +14,8 @@
                 "post-install-output": [
                     "  * Now you need to make some manually changes:",
                     "",
-                    "    Add the config/routes.yaml.dist and config/packages/security.yaml.dist to your yaml files",
+                    "    Add the config/packages/security.yaml.dist to your yaml file",
                     "        mv config/packages/security.yaml.dist config/packages/security.yaml",
-                    "        cat config/routes.yaml.dist >> config/routes.yaml",
-                    "        rm config/routes.yaml.dist",
                     "",
                     "    Run doctrine migrations",
                     "        php bin/console doctrine:migrations:diff --namespace=\"DoctrineMigrations\"",
@@ -29,6 +27,14 @@
                     "    Promote the user to admin if you want",
                     "        php bin/console sfs:user:promote username",
                     ""
+                ],
+                "add-lines": [
+                    {
+                        "file": "config/routes.yaml",
+                        "content": "\n_sfs_user:\n        resource: \"routes/sfs_user.yaml\"\n        prefix: \"/app\"\n\n",
+                        "position": "bottom",
+                        "warn_if_missing": true
+                    }
                 ]
             },
             "files": {
@@ -56,16 +62,6 @@
                         "_sfs_preferences:",
                         "    resource: '@SfsUserBundle/config/routing/preferences.yaml'",
                         "    prefix: \"/user/preferences\"",
-                        ""
-                    ],
-                    "executable": false
-                },
-                "config/routes.yaml.dist": {
-                    "contents":[
-                        "",
-                        "_sfs_user:",
-                        "    resource: 'routes/sfs_user.yaml'",
-                        "    prefix: /app",
                         ""
                     ],
                     "executable": false
