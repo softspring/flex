@@ -31,7 +31,7 @@
                 "add-lines": [
                     {
                         "file": "config/routes.yaml",
-                        "content": "\n_sfs_user:\n        resource: \"routes/sfs_user.yaml\"\n        prefix: \"/app\"\n\n",
+                        "content": "\n_sfs_user:\n        resource: \"routes/sfs_user.yaml\"\n        prefix: \"/app\"_sfs_admin_user:\n    resource: \"routes/admin/sfsuser.yaml\"\n    prefix: \"/admin/users\"\n\n",
                         "position": "bottom",
                         "warn_if_missing": true
                     },
@@ -75,6 +75,26 @@
                         "    resource: '@SfsUserBundle/config/routing/preferences.yaml'",
                         "    prefix: \"/user/preferences\"",
                         ""
+                    ],
+                    "executable": false
+                },
+                "config/routes/admin/sfs_user.yaml": {
+                    "contents":[
+                        "_sfs_user_admin:",
+                        "    resource: \"@SfsUserBundle/config/routing/admin_users.yaml\"",
+                        "    prefix: \"/user\"",
+                        "",
+                        "_sfs_user_admins:",
+                        "    resource: \"@SfsUserBundle/config/routing/admin_administrators.yaml\"",
+                        "    prefix: \"/admins\"",
+                        "",
+                        "_sfs_user_invitations:",
+                        "    resource: \"@SfsUserBundle/config/routing/admin_invitations.yaml\"",
+                        "    prefix: \"/invitations\"",
+                        "",
+                        "#_sfs_user_history:",
+                        "#    resource: \"@SfsUserBundle/config/routing/admin_access_history.yaml\"",
+                        "#    prefix: \",/access-history\""
                     ],
                     "executable": false
                 },
