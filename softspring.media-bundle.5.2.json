@@ -14,6 +14,9 @@
             "files": {
                 "config/packages/sfs_media.yaml": {
                     "contents": [
+                        "imports:",
+                        "    - { resource: '@SfsMediaBundle/config/security/admin_role_hierarchy.yaml' }",
+                        "",
                         "sfs_media:",
                         "    driver: filesystem",
                         "    filesystem:",

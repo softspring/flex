@@ -87,6 +87,10 @@
                         "    resource: \"@SfsCmsBundle/config/routing/admin_blocks.yaml\"",
                         "    prefix: \"/blocks\"",
                         "",
+                        "_sfs_cms_sites_:",
+                        "    resource: \"@SfsCmsBundle/config/routing/admin_sites.yaml\"",
+                        "    prefix: \"/sites\"",
+                        "",
                         "_sfs_media_admin_types_:",
                         "    resource: \"@SfsMediaBundle/config/routing/admin_media.yaml\"",
                         "    prefix: \"/media\"",
@@ -141,7 +145,7 @@
                         "                    route: 'sfs_cms_admin_sites_list'",
                         "                    # role: ROLE_SFS_CMS_ADMIN_SITES_LIST",
                         "                    active_expression: 'sfs_cms_admin_sites_'",
-                        "                    icon: 'bi bi-signpost-split'",
+                        "                    icon: 'bi bi-diagram-3'",
                         ""
                     ],
                     "executable": false

@@ -34,6 +34,18 @@
                         "content": "\n_sfs_user:\n        resource: \"routes/sfs_user.yaml\"\n        prefix: \"/app\"\n\n",
                         "position": "bottom",
                         "warn_if_missing": true
+                    },
+                    {
+                        "file": "config/packages/sfs_admin_menu.yaml",
+                        "content": "\n\n            users:\n                translation_key: 'sidebar.menu.users.title'\n                users:\n                    translation_key: 'sidebar.menu.users.users'\n                    route: 'sfs_user_admin_users_list'\n                    role: PERMISSION_SFS_USER_ADMIN_USERS_LIST\n                    active_expression: 'sfs_user_admin_users_'\n                    icon: 'bi bi-people'\n                administrators:\n                    translation_key: 'sidebar.menu.users.administrators'\n                    route: 'sfs_user_admin_administrators_list'\n                    role: PERMISSION_SFS_USER_ADMIN_ADMINISTRATORS_LIST\n                    active_expression: 'sfs_user_admin_administrators_'\n                    icon: 'bi bi-people-fill'\n#                history:\n#                    translation_key: 'sidebar.menu.users.access_history'\n#                    route: 'sfs_user_admin_access_history_list'\n#                    role: ROLE_ADMIN_ACCESS_HISTORY_LIST\n#                    active_expression: 'sfs_user_admin_access_history_'\n#                    icon: 'bi bi-person-lines-fill'\n#                invitations:\n#                    translation_key: 'sidebar.menu.users.invitations'\n#                    route: 'sfs_user_admin_invitations_list'\n#                    role: ROLE_ADMIN_INVITATIONS_LIST\n#                    active_expression: 'sfs_user_admin_invitations_'\n#                    icon: 'bi bi-person-plus'\n\n",
+                        "position": "bottom",
+                        "warn_if_missing": true
+                    },
+                    {
+                        "file": "sfs_components.en.yaml",
+                        "content": "\n\nsidebar.menu.users.title: \"Users\"\nsidebar.menu.users.users: \"Users\"\nsidebar.menu.users.administrators: \"Administrators\"\nsidebar.menu.users.invitations: \"Invitations\"\nsidebar.menu.mails.title: \"Emails\"",
+                        "position": "bottom",
+                        "warn_if_missing": true
                     }
                 ]
             },
@@ -146,7 +158,7 @@
                     ],
                     "executable": false
                 },
-                "config/packages/sfs_user.yaml.dist": {
+                "config/packages/sfs_user.yaml": {
                     "contents": [
                         "imports:",
                         "    - { resource: '@SfsUserBundle/config/security/admin_role_hierarchy.yaml' }"
