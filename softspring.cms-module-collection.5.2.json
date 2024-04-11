@@ -9,7 +9,7 @@
                         "position": "after_target",
                         "target": "sfs_cms:",
                         "warn_if_missing": true
-                    },
+                    }
                 ]
             },
             "ref": "3c75eff5bb8160785c9cd081271f78ea5977354f"
