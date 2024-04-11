@@ -68,9 +68,6 @@
                 },
                 "config/packages/security.yaml.dist": {
                     "contents": [
-                        "imports:",
-                        "    - { resource: '@SfsUserBundle/config/security/admin_role_hierarchy.yaml' }",
-                        "",
                         "security:",
                         "    # https://symfony.com/doc/current/security.html#registering-the-user-hashing-passwords",
                         "    password_hashers:",
@@ -146,6 +143,13 @@
                         "                cost: 4 # Lowest possible value for bcrypt",
                         "                time_cost: 3 # Lowest possible value for argon",
                         "                memory_cost: 10 # Lowest possible value for argon"
+                    ],
+                    "executable": false
+                },
+                "config/packages/sfs_user.yaml.dist": {
+                    "contents": [
+                        "imports:",
+                        "    - { resource: '@SfsUserBundle/config/security/admin_role_hierarchy.yaml' }"
                     ],
                     "executable": false
                 },
