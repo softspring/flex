@@ -8,6 +8,7 @@
                     ]
                 },
                 "copy-from-recipe": {
+                    "config/": "config/",
                     "src/": "src/"
                 },
                 "post-install-output": [
