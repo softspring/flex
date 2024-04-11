@@ -42,7 +42,7 @@
                         "warn_if_missing": true
                     },
                     {
-                        "file": "sfs_components.en.yaml",
+                        "file": "translations/sfs_components.en.yaml",
                         "content": "\n\nsidebar.menu.users.title: \"Users\"\nsidebar.menu.users.users: \"Users\"\nsidebar.menu.users.administrators: \"Administrators\"\nsidebar.menu.users.invitations: \"Invitations\"\nsidebar.menu.mails.title: \"Emails\"",
                         "position": "bottom",
                         "warn_if_missing": true
