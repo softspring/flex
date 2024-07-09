@@ -31,7 +31,7 @@
                 "add-lines": [
                     {
                         "file": "config/routes.yaml",
-                        "content": "\n_sfs_user:\n        resource: \"routes/sfs_user.yaml\"\n        prefix: \"/app\"_sfs_admin_user:\n    resource: \"routes/admin/sfsuser.yaml\"\n    prefix: \"/admin/users\"\n\n",
+                        "content": "\n_sfs_user:\n        resource: \"routes/sfs_user.yaml\"\n        prefix: \"/app\"\n\n_sfs_admin_user:\n    resource: \"routes/admin/sfsuser.yaml\"\n    prefix: \"/admin/users\"\n\n",
                         "position": "bottom",
                         "warn_if_missing": true
                     },
